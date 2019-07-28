@@ -1,0 +1,9 @@
+C:\Users\Dan\Source\Repos\Medulla\Medulla.Engine\bin\Debug\Medulla.Engine.dll
+C:\Users\Dan\Source\Repos\Medulla\Medulla.Engine\bin\Debug\Medulla.Engine.pdb
+C:\Users\Dan\Source\Repos\Medulla\Medulla.Engine\bin\Debug\Medulla.Core.dll
+C:\Users\Dan\Source\Repos\Medulla\Medulla.Engine\bin\Debug\Medulla.Core.pdb
+C:\Users\Dan\Source\Repos\Medulla\Medulla.Engine\obj\Debug\Medulla.Engine.csprojAssemblyReference.cache
+C:\Users\Dan\Source\Repos\Medulla\Medulla.Engine\obj\Debug\Medulla.Engine.csproj.CoreCompileInputs.cache
+C:\Users\Dan\Source\Repos\Medulla\Medulla.Engine\obj\Debug\Medulla.Engine.csproj.CopyComplete
+C:\Users\Dan\Source\Repos\Medulla\Medulla.Engine\obj\Debug\Medulla.Engine.dll
+C:\Users\Dan\Source\Repos\Medulla\Medulla.Engine\obj\Debug\Medulla.Engine.pdb

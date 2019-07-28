@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.168
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MedullaUI", "MedullaUI\MedullaUI.csproj", "{76C2873F-B9D9-48AF-B0BA-3FF5A515D8D9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Medulla.Core", "Medulla.Core\Medulla.Core.csproj", "{B4C00345-6A31-4FA6-84DF-AD272882577B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Medulla.Engine", "Medulla.Engine\Medulla.Engine.csproj", "{BF6BE70D-884D-4265-ACEB-137049C13CCF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Medulla.Engine.Tests", "Medulla.Engine.Tests\Medulla.Engine.Tests.csproj", "{08BCB8C5-D003-4229-900D-D8BEED9D6ED4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{76C2873F-B9D9-48AF-B0BA-3FF5A515D8D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76C2873F-B9D9-48AF-B0BA-3FF5A515D8D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76C2873F-B9D9-48AF-B0BA-3FF5A515D8D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76C2873F-B9D9-48AF-B0BA-3FF5A515D8D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B4C00345-6A31-4FA6-84DF-AD272882577B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4C00345-6A31-4FA6-84DF-AD272882577B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4C00345-6A31-4FA6-84DF-AD272882577B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4C00345-6A31-4FA6-84DF-AD272882577B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF6BE70D-884D-4265-ACEB-137049C13CCF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF6BE70D-884D-4265-ACEB-137049C13CCF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF6BE70D-884D-4265-ACEB-137049C13CCF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF6BE70D-884D-4265-ACEB-137049C13CCF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{08BCB8C5-D003-4229-900D-D8BEED9D6ED4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{08BCB8C5-D003-4229-900D-D8BEED9D6ED4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{08BCB8C5-D003-4229-900D-D8BEED9D6ED4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{08BCB8C5-D003-4229-900D-D8BEED9D6ED4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4CDA1250-941D-41A7-BCC8-696C312ACD36}
+	EndGlobalSection
+EndGlobal

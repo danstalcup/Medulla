@@ -73,7 +73,7 @@
     <Compile Include="BattleProcessing\NextUnitFinderTests.cs" />
     <Compile Include="BattleProcessing\TargetUnitsFinderTests.cs" />
     <Compile Include="BattleProcessing\TeamFinderTests.cs" />
-    <Compile Include="GameEngineTests.cs" />
+    <Compile Include="BattleEngineTests.cs" />
     <Compile Include="Rendering\BattleRenderTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Rendering\BattleTeamRenderTests.cs" />

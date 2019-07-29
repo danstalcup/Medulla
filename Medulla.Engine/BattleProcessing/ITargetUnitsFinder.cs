@@ -10,5 +10,7 @@ namespace Medulla.Engine.BattleProcessing
     public interface ITargetUnitsFinder
     {
         List<string> FindTargetUnitNames(Battle battle, BattleUnit currentUnit, string actionType, string action);
+
+        BattleUnit FindTargetForAI(Battle battle, BattleUnit battleUnit, string actionType, string action);
     }
 }

@@ -20,5 +20,10 @@ namespace Medulla.Engine.BattleProcessing
         {
             return teamFinder.FindOpposingTeam(battle, currentUnit).Units.Where(x => x.HP > 0).Select(x => x.Name).ToList();
         }
+
+        public BattleUnit FindTargetForAI(Battle battle, BattleUnit currentUnit, string actionType, string action)
+        {
+            return battle.Team1.Units.FirstOrDefault(x => x.HP > 0);
+        }
     }
 }

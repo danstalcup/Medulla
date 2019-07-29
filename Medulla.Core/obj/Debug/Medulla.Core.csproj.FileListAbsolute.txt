@@ -3,3 +3,4 @@ C:\Users\Dan\Source\Repos\Medulla\Medulla.Core\bin\Debug\Medulla.Core.pdb
 C:\Users\Dan\Source\Repos\Medulla\Medulla.Core\obj\Debug\Medulla.Core.csproj.CoreCompileInputs.cache
 C:\Users\Dan\Source\Repos\Medulla\Medulla.Core\obj\Debug\Medulla.Core.dll
 C:\Users\Dan\Source\Repos\Medulla\Medulla.Core\obj\Debug\Medulla.Core.pdb
+C:\Users\Dan\Source\Repos\Medulla\Medulla.Core\obj\Debug\Medulla.Core.csprojAssemblyReference.cache

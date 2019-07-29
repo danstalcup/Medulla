@@ -13,16 +13,17 @@ using NUnit.Framework;
 
 namespace Medulla.Engine.Tests
 {
-    public class GameEngineTests
+    public class BattleEngineTests
     {
-        private GameEngine classUnderTest;
+        private BattleEngine classUnderTest;
         private AutoMocker mocker;
 
         [SetUp]
         public void SetUp()
         {
             mocker = new AutoMocker();
-            classUnderTest = mocker.CreateInstance<GameEngine>();
+            classUnderTest = mocker.CreateInstance<BattleEngine>();
+            mocker.GetMock<INextUnitFinder>().Setup(x => x.IsNextUnitPlayerControlled(It.IsAny<Battle>())).Returns(true);
         }
 
         [Test]
@@ -33,6 +34,7 @@ namespace Medulla.Engine.Tests
             var target = new BattleUnit{Name = "Target"};
             mocker.GetMock<IBattleRender>().Setup(x => x.RenderHtml(It.IsAny<Battle>(), It.IsAny<BattleUnit>(), It.IsAny<BattleUnit>())).Returns("Howdy");
             mocker.GetMock<INextUnitFinder>().Setup(x => x.GetNextBattleUnit(It.IsAny<Battle>())).Returns(nextUnit);
+            mocker.GetMock<INextUnitFinder>().Setup(x => x.IsNextUnitPlayerControlled(It.IsAny<Battle>())).Returns(true);
             mocker.GetMock<IBattleUnitRender>().Setup(x => x.RenderDetailsHtml(nextUnit)).Returns("Apple");
             mocker.GetMock<IBattleUnitRender>().Setup(x => x.RenderDetailsHtml(target)).Returns("Banana");
             classUnderTest.CurrentBattle.Team1.Units.Add(target);
@@ -53,6 +55,7 @@ namespace Medulla.Engine.Tests
             var nextUnit = new BattleUnit {Name = "Testerly"};
             var actionTypes = new List<string> {"Test Action"};
             mocker.GetMock<INextUnitFinder>().Setup(x => x.GetNextBattleUnit(It.IsAny<Battle>())).Returns(nextUnit);
+            mocker.GetMock<INextUnitFinder>().Setup(x => x.IsNextUnitPlayerControlled(It.IsAny<Battle>())).Returns(true);
             mocker.GetMock<IActionFinder>().Setup(x => x.FindActionTypes(nextUnit)).Returns(actionTypes);
             classUnderTest.StartBattle();
 
@@ -110,6 +113,7 @@ namespace Medulla.Engine.Tests
             classUnderTest.SetSelectedBattleActionType("Test Type");
             classUnderTest.SetSelectedBattleAction("Test Action");
             mocker.GetMock<INextUnitFinder>().Setup(x => x.GetNextBattleUnit(It.IsAny<Battle>())).Returns(nextUnit);
+            mocker.GetMock<INextUnitFinder>().Setup(x => x.IsNextUnitPlayerControlled(It.IsAny<Battle>())).Returns(true);
             classUnderTest.StartBattle();
             mocker.GetMock<ITargetUnitsFinder>().Setup(x => x.FindTargetUnitNames(It.IsAny<Battle>(), nextUnit, "Test Type", "Test Action")).Returns(targetNames);
 
@@ -173,6 +177,7 @@ namespace Medulla.Engine.Tests
             classUnderTest.CurrentBattle.Team1.Units.Add(target);
             classUnderTest.SetSelectedBattleActionTarget("Target");
             mocker.GetMock<INextUnitFinder>().Setup(x => x.GetNextBattleUnit(It.IsAny<Battle>())).Returns(new BattleUnit());
+            mocker.GetMock<INextUnitFinder>().Setup(x => x.IsNextUnitPlayerControlled(It.IsAny<Battle>())).Returns(true);
             classUnderTest.StartBattle();
 
             //act
@@ -195,6 +200,43 @@ namespace Medulla.Engine.Tests
             //assert
             //twice because StartBattle is used for setup
             mocker.GetMock<INextUnitFinder>().Verify(x => x.GetNextBattleUnit(It.IsAny<Battle>()), Times.Exactly(2));
+        }
+
+        [Test]
+        public void ProcessBattleAction_IfNextUnitIsAI_SetsTargetViaFindAITarget()
+        {
+            //arrange            
+            mocker.GetMock<INextUnitFinder>().Setup(x => x.GetNextBattleUnit(It.IsAny<Battle>())).Returns(new BattleUnit());
+            classUnderTest.StartBattle();
+            mocker.GetMock<INextUnitFinder>().Setup(x => x.IsNextUnitPlayerControlled(classUnderTest.CurrentBattle)).Returns(false);
+            var target = new BattleUnit();
+            mocker.GetMock<ITargetUnitsFinder>().Setup(x => x.FindTargetForAI(It.IsAny<Battle>(), It.IsAny<BattleUnit>(), "Attack", "Basic Attack")).Returns(target);
+
+            //act
+            classUnderTest.ProcessBattleAction();
+
+            //assert
+            classUnderTest.SelectedBattleActionTarget.Should().Be(target);
+            classUnderTest.SelectedBattleActionType.Should().Be("Attack");
+            classUnderTest.SelectedBattleAction.Should().Be("Basic Attack");
+        }
+
+        [Test]
+        public void StartBattle_IfNextUnitIsAI_SetsTargetViaFindAITarget()
+        {
+            //arrange            
+            mocker.GetMock<INextUnitFinder>().Setup(x => x.GetNextBattleUnit(It.IsAny<Battle>())).Returns(new BattleUnit());
+            mocker.GetMock<INextUnitFinder>().Setup(x => x.IsNextUnitPlayerControlled(classUnderTest.CurrentBattle)).Returns(false);
+            var target = new BattleUnit();
+            mocker.GetMock<ITargetUnitsFinder>().Setup(x => x.FindTargetForAI(It.IsAny<Battle>(), It.IsAny<BattleUnit>(), "Attack", "Basic Attack")).Returns(target);
+
+            //act
+            classUnderTest.StartBattle();
+
+            //assert
+            classUnderTest.SelectedBattleActionTarget.Should().Be(target);
+            classUnderTest.SelectedBattleActionType.Should().Be("Attack");
+            classUnderTest.SelectedBattleAction.Should().Be("Basic Attack");
         }
     }
 }

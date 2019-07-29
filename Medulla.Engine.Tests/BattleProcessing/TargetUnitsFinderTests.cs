@@ -61,5 +61,23 @@ namespace Medulla.Engine.Tests.BattleProcessing
             result.Count.Should().Be(1);
             result.Should().Contain("Nun-Nun");
         }
+
+        [Test]
+        public void FindTargetForAI_PullsFirstUnitFromTeam1WithPositiveHp()
+        {
+            var deadUnit = new BattleUnit();
+            var firstUnit = new BattleUnit { HP = 1 };
+            var secondUnit = new BattleUnit { HP = 2 };
+            var team2Unit = new BattleUnit { HP = 3 };
+            var battle = new Battle();
+            battle.Team1.Units = new List<BattleUnit> {deadUnit, firstUnit, secondUnit};
+            battle.Team2.Units.Add(team2Unit);
+
+            //act
+            var result = classUnderTest.FindTargetForAI(battle, new BattleUnit(), string.Empty, string.Empty);
+
+            //assert
+            result.Should().Be(firstUnit);
+        }
     }
 }

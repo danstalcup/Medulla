@@ -10,7 +10,7 @@ using Medulla.Engine.TestBuilders;
 
 namespace Medulla.Engine
 {
-    public class GameEngine
+    public class BattleEngine
     {        
         public Battle CurrentBattle { get; set; }
 
@@ -32,7 +32,7 @@ namespace Medulla.Engine
         private readonly ICooldownUpdater cooldownUpdater;
         private readonly IBattleActionProcessor battleActionProcessor;
 
-        public GameEngine(IBattleRender battleRender, IActionFinder actionFinder, INextUnitFinder nextUnitFinder, ITargetUnitsFinder targetUnitsFinder, IBattleUnitRender battleUnitRender, ICooldownUpdater cooldownUpdater, IBattleActionProcessor battleActionProcessor)
+        public BattleEngine(IBattleRender battleRender, IActionFinder actionFinder, INextUnitFinder nextUnitFinder, ITargetUnitsFinder targetUnitsFinder, IBattleUnitRender battleUnitRender, ICooldownUpdater cooldownUpdater, IBattleActionProcessor battleActionProcessor)
         {
             this.battleRender = battleRender;
             this.actionFinder = actionFinder;
@@ -107,6 +107,18 @@ namespace Medulla.Engine
             NextUnit = nextUnitFinder.GetNextBattleUnit(CurrentBattle);
             IsPlayerTurn = nextUnitFinder.IsNextUnitPlayerControlled(CurrentBattle);
             cooldownUpdater.DecrementCooldownsByNextUnitsCooldown(CurrentBattle, NextUnit);
+
+            if (!IsPlayerTurn)
+            {
+                ProcessComputerPlayerTarget();
+            }
+        }
+
+        private void ProcessComputerPlayerTarget()
+        {
+            SelectedBattleAction = "Basic Attack";
+            SelectedBattleActionType = "Attack";
+            SelectedBattleActionTarget = targetUnitsFinder.FindTargetForAI(CurrentBattle, NextUnit, SelectedBattleActionType, SelectedBattleAction);
         }
     }
 }

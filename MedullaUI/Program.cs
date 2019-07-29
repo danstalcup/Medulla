@@ -28,13 +28,13 @@ namespace Medulla
             Application.SetCompatibleTextRenderingDefault(false);
             using (var scope = container.BeginLifetimeScope())
             {
-                Application.Run(new Form1(scope.Resolve<GameEngine>()));
+                Application.Run(new Form1(scope.Resolve<BattleEngine>()));
             }
         }
 
         private static void Register(ContainerBuilder builder)
         {
-            builder.RegisterType<GameEngine>();
+            builder.RegisterType<BattleEngine>();
             builder.RegisterType<BattleRender>().As<IBattleRender>();
             builder.RegisterType<BattleTeamRender>().As<IBattleTeamRender>();
             builder.RegisterType<BattleUnitRender>().As<IBattleUnitRender>();

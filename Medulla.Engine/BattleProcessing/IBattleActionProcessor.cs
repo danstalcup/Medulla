@@ -9,6 +9,6 @@ namespace Medulla.Engine.BattleProcessing
 {
     public interface IBattleActionProcessor
     {
-        void ProcessBattleAction(string actionType, string action, BattleUnit target);
+        void ProcessBattleAction(string actionType, string action, BattleUnit currentUnit, BattleUnit targetUnit);
     }
 }

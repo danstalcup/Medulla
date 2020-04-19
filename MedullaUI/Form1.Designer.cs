@@ -34,8 +34,10 @@
             this.listBox2 = new System.Windows.Forms.ListBox();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.webBrowser1 = new System.Windows.Forms.WebBrowser();
+            this.listBox4 = new System.Windows.Forms.ListBox();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.tabPage1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -43,6 +45,8 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.panel2);
+            this.tabPage1.Controls.Add(this.listBox4);
             this.tabPage1.Controls.Add(this.listBox3);
             this.tabPage1.Controls.Add(this.button1);
             this.tabPage1.Controls.Add(this.listBox2);
@@ -98,17 +102,8 @@
             this.panel1.Controls.Add(this.webBrowser1);
             this.panel1.Location = new System.Drawing.Point(14, 10);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(600, 600);
+            this.panel1.Size = new System.Drawing.Size(600, 670);
             this.panel1.TabIndex = 0;
-            // 
-            // webBrowser1
-            // 
-            this.webBrowser1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.webBrowser1.Location = new System.Drawing.Point(0, 0);
-            this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
-            this.webBrowser1.Name = "webBrowser1";
-            this.webBrowser1.Size = new System.Drawing.Size(600, 600);
-            this.webBrowser1.TabIndex = 1;
             // 
             // tabControl1
             // 
@@ -118,6 +113,30 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1077, 709);
             this.tabControl1.TabIndex = 0;
+            // 
+            // webBrowser1
+            // 
+            this.webBrowser1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.webBrowser1.Location = new System.Drawing.Point(0, 0);
+            this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
+            this.webBrowser1.Name = "webBrowser1";
+            this.webBrowser1.Size = new System.Drawing.Size(600, 670);
+            this.webBrowser1.TabIndex = 3;
+            // 
+            // listBox4
+            // 
+            this.listBox4.FormattingEnabled = true;
+            this.listBox4.Location = new System.Drawing.Point(620, 372);
+            this.listBox4.Name = "listBox4";
+            this.listBox4.Size = new System.Drawing.Size(104, 303);
+            this.listBox4.TabIndex = 5;
+            // 
+            // panel2
+            // 
+            this.panel2.Location = new System.Drawing.Point(731, 373);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(241, 301);
+            this.panel2.TabIndex = 6;
             // 
             // Form1
             // 
@@ -143,6 +162,8 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.ListBox listBox3;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.ListBox listBox4;
         private System.Windows.Forms.WebBrowser webBrowser1;
     }
 }

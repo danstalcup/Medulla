@@ -48,15 +48,19 @@ namespace Medulla.Engine
 
         public string GetBattleRenderHtml()
         {
-            var result = battleRender.RenderHtml(CurrentBattle, NextUnit, SelectedBattleActionTarget) +
+            var result = new StringBuilder();
+            result.Append(battleRender.RenderHtml(CurrentBattle, NextUnit, SelectedBattleActionTarget) +
                    $"<h2>Current Unit:</h2>{battleUnitRender.RenderDetailsHtml(NextUnit)}" +
-                   $"<h2>Action:</h2><p>{SelectedBattleAction}</p>";
+                   $"<h2>Action:</h2><p>{SelectedBattleAction}</p>");
             if (SelectedBattleActionTarget != null)
             {
-                result += $"<h2>Target:</h2>{battleUnitRender.RenderDetailsHtml(SelectedBattleActionTarget)}";
+                result.Append( $"<h2>Target:</h2>{battleUnitRender.RenderDetailsHtml(SelectedBattleActionTarget)}");
             }
 
-            return result;
+            result.Append("<h2>Battle Order:</h2>");
+            result.Append(battleRender.RenderBattleOrderHtml(CurrentBattle)); 
+
+            return result.ToString();
         }
 
         public List<string> GetBattleActionTypes()
@@ -82,7 +86,7 @@ namespace Medulla.Engine
         public void SetSelectedBattleActionTarget(string name)
         {
             SelectedBattleActionTarget =
-                CurrentBattle.Team1.Units.Union(CurrentBattle.Team2.Units).Single(x => x.Name == name);
+                CurrentBattle.AllUnits.Single(x => x.Name == name);
         }
 
         public List<string> GetBattleTargets()
@@ -92,9 +96,14 @@ namespace Medulla.Engine
 
         public void ProcessBattleAction()
         {
-            battleActionProcessor.ProcessBattleAction(SelectedBattleActionType, SelectedBattleAction, SelectedBattleActionTarget);
-            NextUnit.Cooldown += 40;
+            battleActionProcessor.ProcessBattleAction(SelectedBattleActionType, SelectedBattleAction, NextUnit, SelectedBattleActionTarget);
+            var speed = NextUnit.Speed == 0 ? 1 : NextUnit.Speed;
+            NextUnit.Cooldown += (int)(100.0 / speed);
             ProcessNextBattleUnit();
+            if (IsBattleOver())
+            {
+                //TODO: Process end of battle
+            }
         }
 
         public void StartBattle()
@@ -119,6 +128,11 @@ namespace Medulla.Engine
             SelectedBattleAction = "Basic Attack";
             SelectedBattleActionType = "Attack";
             SelectedBattleActionTarget = targetUnitsFinder.FindTargetForAI(CurrentBattle, NextUnit, SelectedBattleActionType, SelectedBattleAction);
+        }
+
+        public bool IsBattleOver()
+        {
+            return (CurrentBattle ?? new Battle()).IsBattleOver;
         }
     }
 }

@@ -21,6 +21,8 @@ namespace Medulla.Engine.TestBuilders
             unit.Name = startingLetter + RandomString(5);
             unit.Cooldown = random.Next(100);
             unit.HP = random.Next(20);
+            unit.Speed = random.Next(15) + 1;
+            unit.Attack = random.Next(10) + 1;
             return unit;
         }
 

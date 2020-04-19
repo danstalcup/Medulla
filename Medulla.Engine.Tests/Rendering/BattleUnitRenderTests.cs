@@ -31,7 +31,7 @@ namespace Medulla.Engine.Tests.Rendering
             var result = classUnderTest.RenderHtml(unit, BattleUnitRender.RenderStyle.Normal);
 
             //assert
-            result.Should().Be($"<td>{name}<br>HP: 10<br>Cooldown: 0</td>");
+            result.Should().Be($"<td>{name}<br>HP: 10<br>Cooldown: 0<br><br>Attack: 0<br>Speed: 0</td>");
         }
 
         [TestCase("Nun-Nun")]
@@ -53,13 +53,13 @@ namespace Medulla.Engine.Tests.Rendering
         public void RenderDetailsHtml_ShowsUnitDetailsInUl(string name)
         {
             //arrange
-            var unit = new BattleUnit { Name = name };
+            var unit = new BattleUnit { Name = name, HP = 1, Speed = 2, Attack = 3, Cooldown = 4};
 
             //act
             var result = classUnderTest.RenderDetailsHtml(unit);
 
             //assert
-            result.Should().Be($"<ul><li>{name}</li><li>HP: 0</li></ul>");
+            result.Should().Be($"<ul><li>{name}</li><li>HP: 1</li><li>Cooldown: 4</li><br><li>Attack: 3</li><li>Speed: 2</li></ul>");
         }
 
         [TestCase("Nun-Nun")]
@@ -73,7 +73,7 @@ namespace Medulla.Engine.Tests.Rendering
             var result = classUnderTest.RenderHtml(unit, BattleUnitRender.RenderStyle.Current);
 
             //assert
-            result.Should().Be($"<td><b>{name}<br>HP: 10<br>Cooldown: 0</b></td>");
+            result.Should().Be($"<td><b>{name}<br>HP: 10<br>Cooldown: 0<br><br>Attack: 0<br>Speed: 0</b></td>");
         }
 
         [TestCase("Nun-Nun")]
@@ -87,7 +87,7 @@ namespace Medulla.Engine.Tests.Rendering
             var result = classUnderTest.RenderHtml(unit, BattleUnitRender.RenderStyle.Target);
 
             //assert
-            result.Should().Be($"<td><i>{name}<br>HP: 10<br>Cooldown: 0</i></td>");
+            result.Should().Be($"<td><i>{name}<br>HP: 10<br>Cooldown: 0<br><br>Attack: 0<br>Speed: 0</i></td>");
         }
     }
 }

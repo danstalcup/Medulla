@@ -37,6 +37,7 @@ namespace Medulla.Engine.Tests
             mocker.GetMock<INextUnitFinder>().Setup(x => x.IsNextUnitPlayerControlled(It.IsAny<Battle>())).Returns(true);
             mocker.GetMock<IBattleUnitRender>().Setup(x => x.RenderDetailsHtml(nextUnit)).Returns("Apple");
             mocker.GetMock<IBattleUnitRender>().Setup(x => x.RenderDetailsHtml(target)).Returns("Banana");
+            mocker.GetMock<IBattleRender>().Setup(x => x.RenderBattleOrderHtml(It.IsAny<Battle>())).Returns("BATTLE+ORDER");
             classUnderTest.CurrentBattle.Team1.Units.Add(target);
             classUnderTest.StartBattle();
             classUnderTest.SetSelectedBattleActionTarget("Target");
@@ -45,7 +46,7 @@ namespace Medulla.Engine.Tests
             var result = classUnderTest.GetBattleRenderHtml();
 
             //assert
-            result.Should().Be("Howdy<h2>Current Unit:</h2>Apple<h2>Action:</h2><p></p><h2>Target:</h2>Banana");
+            result.Should().Be("Howdy<h2>Current Unit:</h2>Apple<h2>Action:</h2><p></p><h2>Target:</h2>Banana<h2>Battle Order:</h2>BATTLE+ORDER");
         }
 
         [Test]
@@ -184,7 +185,7 @@ namespace Medulla.Engine.Tests
             classUnderTest.ProcessBattleAction();
 
             //assert
-            mocker.GetMock<IBattleActionProcessor>().Verify(x => x.ProcessBattleAction(It.IsAny<string>(), It.IsAny<string>(), target), Times.Once);
+            mocker.GetMock<IBattleActionProcessor>().Verify(x => x.ProcessBattleAction(It.IsAny<string>(), It.IsAny<string>(), It.IsAny<BattleUnit>(), target), Times.Once);
         }
 
         [Test]
@@ -238,5 +239,21 @@ namespace Medulla.Engine.Tests
             classUnderTest.SelectedBattleActionType.Should().Be("Attack");
             classUnderTest.SelectedBattleAction.Should().Be("Basic Attack");
         }
+
+        [Test]
+        public void IsBattleOver_BattleIsNull_True()
+        {
+            //arrange
+            classUnderTest.CurrentBattle = null;
+
+            //act
+            var result = classUnderTest.IsBattleOver();
+
+            //assert
+            result.Should().BeTrue();
+        }
+
+        [Test]
+        public void 
     }
 }

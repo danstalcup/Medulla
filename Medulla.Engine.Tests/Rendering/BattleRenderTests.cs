@@ -34,5 +34,20 @@ namespace Medulla.Engine.Tests.Rendering
             //assert
             result.Should().Be("ABCABC");
         }
+
+        [Test]
+        public void RenderBattleOrderHtml_RendersPlayersNamesInOrderWithDashesForTeam2()
+        {
+            //arrange
+            var battle = new Battle();
+            battle.Team1.Units.Add(new BattleUnit { Cooldown = 5, Name = "Aa", HP = 1});
+            battle.Team2.Units.Add(new BattleUnit { Cooldown = 10, Name = "Bb", HP = 1});
+
+            //act
+            var result = classUnderTest.RenderBattleOrderHtml(battle);
+
+            //assert
+            result.Should().Be("<table border=\"1\"><tr><td>Aa (5)</td></tr><tr><td>-Bb (10)</td></tr></table>");
+        }
     }
 }

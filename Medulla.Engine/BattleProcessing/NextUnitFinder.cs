@@ -11,7 +11,7 @@ namespace Medulla.Engine.BattleProcessing
     {
         public BattleUnit GetNextBattleUnit(Battle battle)
         {
-            return battle.Team1.Units.Union(battle.Team2.Units).OrderBy(x => x.Cooldown).First(x => x.HP > 0);
+            return battle.AllUnits.OrderBy(x => x.Cooldown).First(x => x.IsAlive );
         }
 
         public bool IsNextUnitPlayerControlled(Battle battle)

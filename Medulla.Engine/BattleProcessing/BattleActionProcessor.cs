@@ -9,13 +9,12 @@ namespace Medulla.Engine.BattleProcessing
 {
     public class BattleActionProcessor : IBattleActionProcessor
     {
-        public void ProcessBattleAction(string actionType, string action, BattleUnit target)
+        public void ProcessBattleAction(string actionType, string action, BattleUnit currentUnit, BattleUnit targetUnit)
         {
-            var random = new Random();
-            target.HP -= random.Next(5);
-            if (target.HP < 0)
+            targetUnit.HP -= currentUnit.Attack;
+            if (targetUnit.HP < 0)
             {
-                target.HP = 0;
+                targetUnit.HP = 0;                
             }
             
         }

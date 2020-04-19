@@ -10,5 +10,7 @@ namespace Medulla.Engine.Rendering
     public interface IBattleRender
     {
         string RenderHtml(Battle battle, BattleUnit currentUnit, BattleUnit targetUnit);
+
+        string RenderBattleOrderHtml(Battle battle);
     }
 }

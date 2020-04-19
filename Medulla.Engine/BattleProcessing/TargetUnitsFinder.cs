@@ -23,7 +23,7 @@ namespace Medulla.Engine.BattleProcessing
 
         public BattleUnit FindTargetForAI(Battle battle, BattleUnit currentUnit, string actionType, string action)
         {
-            return battle.Team1.Units.FirstOrDefault(x => x.HP > 0);
+            return battle.Team1.Units.FirstOrDefault(x => x.IsAlive);
         }
     }
 }

@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Medulla.Engine", "Medulla.E
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Medulla.Engine.Tests", "Medulla.Engine.Tests\Medulla.Engine.Tests.csproj", "{08BCB8C5-D003-4229-900D-D8BEED9D6ED4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Medulla.Core.Tests", "Medulla.Core.Tests\Medulla.Core.Tests.csproj", "{F7BD0740-FBC9-4242-A90B-ECFB432CF58F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{08BCB8C5-D003-4229-900D-D8BEED9D6ED4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{08BCB8C5-D003-4229-900D-D8BEED9D6ED4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{08BCB8C5-D003-4229-900D-D8BEED9D6ED4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F7BD0740-FBC9-4242-A90B-ECFB432CF58F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7BD0740-FBC9-4242-A90B-ECFB432CF58F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F7BD0740-FBC9-4242-A90B-ECFB432CF58F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F7BD0740-FBC9-4242-A90B-ECFB432CF58F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

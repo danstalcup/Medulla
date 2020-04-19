@@ -12,7 +12,7 @@ namespace Medulla.Engine.BattleProcessing
         public void DecrementCooldownsByNextUnitsCooldown(Battle battle, BattleUnit nextUnit)
         {
             var cooldownDecrease = nextUnit.Cooldown;
-            foreach (var unit in battle.Team1.Units.Union(battle.Team2.Units))
+            foreach (var unit in battle.AllUnits)
             {
                 unit.Cooldown -= cooldownDecrease;
             }

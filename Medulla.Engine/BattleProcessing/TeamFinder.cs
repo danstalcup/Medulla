@@ -14,9 +14,9 @@ namespace Medulla.Engine.BattleProcessing
             return GetTeams(battle).Single(x => !x.Units.Contains(battleUnit));
         }
 
-        private BattleTeam[] GetTeams(Battle battle)
+        private IEnumerable<BattleTeam> GetTeams(Battle battle)
         {
-            return new BattleTeam[]{ battle.Team1, battle.Team2 };
+            return new[]{ battle.Team1, battle.Team2 };
         }
     }
 }

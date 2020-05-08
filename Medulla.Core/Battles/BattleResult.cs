@@ -8,6 +8,6 @@ namespace Medulla.Core.Battles
 {
     public class BattleResult
     {
-        
+        public int ExperienceGained { get; set; }
     }
 }

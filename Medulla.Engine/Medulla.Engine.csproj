@@ -41,23 +41,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BattleProcessing\ActionFinder.cs" />
-    <Compile Include="BattleProcessing\BattleActionProcessor.cs" />
-    <Compile Include="BattleProcessing\CooldownUpdater.cs" />
+    <Compile Include="BattleProcessing\IBattleEndingProcessor.cs" />
+    <Compile Include="BattleProcessing\Implemented\ActionFinder.cs" />
+    <Compile Include="BattleProcessing\Implemented\BattleActionProcessor.cs" />
+    <Compile Include="BattleProcessing\Implemented\BattleEndingProcessor.cs" />
+    <Compile Include="BattleProcessing\Implemented\CooldownUpdater.cs" />
     <Compile Include="BattleProcessing\IBattleActionProcessor.cs" />
     <Compile Include="BattleProcessing\ICooldownUpdater.cs" />
-    <Compile Include="BattleProcessing\TargetUnitsFinder.cs" />
-    <Compile Include="BattleProcessing\TeamFinder.cs" />
+    <Compile Include="BattleProcessing\Implemented\TargetUnitsFinder.cs" />
+    <Compile Include="BattleProcessing\Implemented\TeamFinder.cs" />
     <Compile Include="BattleProcessing\IActionFinder.cs" />
     <Compile Include="BattleProcessing\INextUnitFinder.cs" />
     <Compile Include="BattleProcessing\ITeamFinder.cs" />
     <Compile Include="BattleProcessing\ITargetUnitsFinder.cs" />
-    <Compile Include="BattleProcessing\NextUnitFinder.cs" />
+    <Compile Include="BattleProcessing\Implemented\NextUnitFinder.cs" />
     <Compile Include="BattleEngine.cs" />
-    <Compile Include="Rendering\BattleRender.cs" />
+    <Compile Include="Rendering\Implemented\BattleRender.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Rendering\BattleTeamRender.cs" />
-    <Compile Include="Rendering\BattleUnitRender.cs" />
+    <Compile Include="Rendering\Implemented\BattleTeamRender.cs" />
+    <Compile Include="Rendering\Implemented\BattleUnitRender.cs" />
     <Compile Include="Rendering\IBattleRender.cs" />
     <Compile Include="Rendering\IBattleTeamRender.cs" />
     <Compile Include="Rendering\IBattleUnitRender.cs" />

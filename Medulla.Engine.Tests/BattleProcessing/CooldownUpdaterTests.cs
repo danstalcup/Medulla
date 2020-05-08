@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using FluentAssertions;
 using Medulla.Core.Battles;
 using Medulla.Engine.BattleProcessing;
+using Medulla.Engine.BattleProcessing.Implemented;
 using NUnit.Framework;
 
 namespace Medulla.Engine.Tests.BattleProcessing

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using FluentAssertions;
 using Medulla.Core.Battles;
 using Medulla.Engine.Rendering;
+using Medulla.Engine.Rendering.Implemented;
 using Moq;
 using Moq.AutoMock;
 using NUnit.Framework;

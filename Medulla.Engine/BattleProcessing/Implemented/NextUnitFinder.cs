@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Linq;
 using Medulla.Core.Battles;
 
-namespace Medulla.Engine.BattleProcessing
+namespace Medulla.Engine.BattleProcessing.Implemented
 {
     public class NextUnitFinder : INextUnitFinder
     {

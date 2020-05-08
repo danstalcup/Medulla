@@ -2,7 +2,7 @@
 using System.Text;
 using Medulla.Core.Battles;
 
-namespace Medulla.Engine.Rendering
+namespace Medulla.Engine.Rendering.Implemented
 {
     public class BattleRender : IBattleRender
     {

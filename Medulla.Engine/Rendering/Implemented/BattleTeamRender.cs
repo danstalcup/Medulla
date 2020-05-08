@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Text;
 using Medulla.Core.Battles;
 
-namespace Medulla.Engine.Rendering
+namespace Medulla.Engine.Rendering.Implemented
 {
     public class BattleTeamRender : IBattleTeamRender
     {

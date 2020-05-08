@@ -254,6 +254,16 @@ namespace Medulla.Engine.Tests
         }
 
         [Test]
-        public void 
+        public void DidYouWin_BattleIsNull_False()
+        {
+            //arrange
+            classUnderTest.CurrentBattle = null;
+
+            //act
+            var result = classUnderTest.DidYouWin();
+
+            //assert
+            result.Should().BeFalse();
+        }
     }
 }

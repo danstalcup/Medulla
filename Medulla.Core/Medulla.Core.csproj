@@ -42,8 +42,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Battles\Battle.cs" />
+    <Compile Include="Battles\BattleResult.cs" />
     <Compile Include="Battles\BattleTeam.cs" />
     <Compile Include="Battles\BattleUnit.cs" />
+    <Compile Include="Characters\Character.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

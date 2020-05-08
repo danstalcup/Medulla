@@ -68,7 +68,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BattleProcessing\ActionFinderTests.cs" />
-    <Compile Include="BattleProcessing\ActionProcessorTests.cs" />
+    <Compile Include="BattleProcessing\BattleActionProcessorTests.cs" />
+    <Compile Include="BattleProcessing\BattleEndingProcessorTests.cs" />
     <Compile Include="BattleProcessing\CooldownUpdaterTests.cs" />
     <Compile Include="BattleProcessing\NextUnitFinderTests.cs" />
     <Compile Include="BattleProcessing\TargetUnitsFinderTests.cs" />

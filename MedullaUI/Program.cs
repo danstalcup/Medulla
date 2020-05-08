@@ -6,7 +6,9 @@ using System.Windows.Forms;
 using Autofac;
 using Medulla.Engine;
 using Medulla.Engine.BattleProcessing;
+using Medulla.Engine.BattleProcessing.Implemented;
 using Medulla.Engine.Rendering;
+using Medulla.Engine.Rendering.Implemented;
 
 namespace Medulla
 {

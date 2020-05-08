@@ -102,7 +102,10 @@ namespace Medulla.Engine
             ProcessNextBattleUnit();
             if (IsBattleOver())
             {
-                //TODO: Process end of battle
+                if (DidYouWin())
+                {
+
+                }
             }
         }
 
@@ -133,6 +136,11 @@ namespace Medulla.Engine
         public bool IsBattleOver()
         {
             return (CurrentBattle ?? new Battle()).IsBattleOver;
+        }
+
+        public bool DidYouWin()
+        {
+            return (CurrentBattle ?? new Battle()).DidYouWin;
         }
     }
 }

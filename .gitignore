@@ -18,6 +18,16 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
+# Build Stuff
+*/**/bin/Debug
+*/**/bin/Release
+*/**/obj/Debug
+*/**/obj/Release
+*.suo
+*.dll
+*.pdb
+*.tmp
+
 # =========================
 # Operating System Files
 # =========================

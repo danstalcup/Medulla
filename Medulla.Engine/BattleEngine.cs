@@ -142,5 +142,7 @@ namespace Medulla.Engine
         {
             return (CurrentBattle ?? new Battle()).DidYouWin;
         }
+
+        
     }
 }

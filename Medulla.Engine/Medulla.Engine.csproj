@@ -56,6 +56,7 @@
     <Compile Include="BattleProcessing\ITargetUnitsFinder.cs" />
     <Compile Include="BattleProcessing\Implemented\NextUnitFinder.cs" />
     <Compile Include="BattleEngine.cs" />
+    <Compile Include="CharacterEngine.cs" />
     <Compile Include="Rendering\Implemented\BattleRender.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Rendering\Implemented\BattleTeamRender.cs" />

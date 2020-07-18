@@ -29,18 +29,21 @@
         private void InitializeComponent()
         {
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.listBox4 = new System.Windows.Forms.ListBox();
             this.listBox3 = new System.Windows.Forms.ListBox();
             this.button1 = new System.Windows.Forms.Button();
             this.listBox2 = new System.Windows.Forms.ListBox();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
-            this.listBox4 = new System.Windows.Forms.ListBox();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.listBox5 = new System.Windows.Forms.ListBox();
             this.tabPage1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabPage1
@@ -57,8 +60,23 @@
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(1069, 683);
             this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "tabPage1";
+            this.tabPage1.Text = "Battle";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // panel2
+            // 
+            this.panel2.Location = new System.Drawing.Point(731, 373);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(241, 301);
+            this.panel2.TabIndex = 6;
+            // 
+            // listBox4
+            // 
+            this.listBox4.FormattingEnabled = true;
+            this.listBox4.Location = new System.Drawing.Point(620, 372);
+            this.listBox4.Name = "listBox4";
+            this.listBox4.Size = new System.Drawing.Size(104, 303);
+            this.listBox4.TabIndex = 5;
             // 
             // listBox3
             // 
@@ -105,15 +123,6 @@
             this.panel1.Size = new System.Drawing.Size(600, 670);
             this.panel1.TabIndex = 0;
             // 
-            // tabControl1
-            // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Location = new System.Drawing.Point(1, 2);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1077, 709);
-            this.tabControl1.TabIndex = 0;
-            // 
             // webBrowser1
             // 
             this.webBrowser1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -123,20 +132,34 @@
             this.webBrowser1.Size = new System.Drawing.Size(600, 670);
             this.webBrowser1.TabIndex = 3;
             // 
-            // listBox4
+            // tabControl1
             // 
-            this.listBox4.FormattingEnabled = true;
-            this.listBox4.Location = new System.Drawing.Point(620, 372);
-            this.listBox4.Name = "listBox4";
-            this.listBox4.Size = new System.Drawing.Size(104, 303);
-            this.listBox4.TabIndex = 5;
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Location = new System.Drawing.Point(1, 2);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(1077, 709);
+            this.tabControl1.TabIndex = 0;
             // 
-            // panel2
+            // tabPage2
             // 
-            this.panel2.Location = new System.Drawing.Point(731, 373);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(241, 301);
-            this.panel2.TabIndex = 6;
+            this.tabPage2.Controls.Add(this.listBox5);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(1069, 683);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Characters";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // listBox5
+            // 
+            this.listBox5.FormattingEnabled = true;
+            this.listBox5.Location = new System.Drawing.Point(8, 7);
+            this.listBox5.Name = "listBox5";
+            this.listBox5.Size = new System.Drawing.Size(120, 212);
+            this.listBox5.TabIndex = 0;
             // 
             // Form1
             // 
@@ -149,6 +172,7 @@
             this.tabPage1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
+            this.tabPage2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -165,6 +189,8 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.ListBox listBox4;
         private System.Windows.Forms.WebBrowser webBrowser1;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.ListBox listBox5;
     }
 }
 

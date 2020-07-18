@@ -28,10 +28,11 @@ namespace Medulla
         private void UpdateBrowserDisplay()
         {
             webBrowser1.DocumentText = battleEngine.GetBattleRenderHtml();
-            var playerTurn = battleEngine.IsPlayerTurn;
+            var playerTurn = battleEngine.IsPlayerTurn && !battleEngine.IsBattleOver();
             listBox1.Visible = playerTurn;
             listBox2.Visible = playerTurn;
             listBox3.Visible = playerTurn;
+            button1.Visible = !battleEngine.IsBattleOver();
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
